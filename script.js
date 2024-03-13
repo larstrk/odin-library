@@ -25,6 +25,7 @@ function displayBooks() {
     const header = document.createElement("th");
     header.textContent = headerText;
     headerRow.appendChild(header);
+    header.classList.add("text-gray-800", "py-4")
   });
 
   myLibrary.forEach(book => {
@@ -32,7 +33,8 @@ function displayBooks() {
     Object.values(book).forEach(value => {
       const cell = row.insertCell();
       cell.textContent = value;
-      cell.classList.add("border", "px-4", "py-2", "text-gray-800");
+    //   row.classList.add("border-b", "border-neutral-200", "font-medium", "dark:border-white/10");
+      cell.classList.add("border-b", "py-2", "text-gray-800");
     });
   });
 
