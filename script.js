@@ -17,7 +17,7 @@ function displayBooks() {
   libraryTable.innerHTML = ''; // Clear previous content
 
   const table = document.createElement("table");
-  table.classList.add("table-auto");
+  table.classList.add("table-auto", "w-full", "text-sm", "text-left", "rtl:text-right", "text-gray-500", "dark:text-gray-400");
 
   const headerRow = table.insertRow();
   const headers = ['Title', 'Author', 'Pages', 'Read'];
@@ -32,6 +32,7 @@ function displayBooks() {
     Object.values(book).forEach(value => {
       const cell = row.insertCell();
       cell.textContent = value;
+      cell.classList.add("border", "px-4", "py-2", "text-gray-800");
     });
   });
 
@@ -76,7 +77,7 @@ saveBtn.addEventListener("click", (event) => {
     }
     
     console.log("new book pushed");
-    
+
     displayBooks();
     dialog.close();
 })

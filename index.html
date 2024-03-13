@@ -7,10 +7,28 @@
     <link rel="stylesheet" href="style.css" />
     <script src="https://cdn.tailwindcss.com"></script>
   </head>
+  <nav class="flex items-center justify-between flex-wrap bg-purple-500 p-3">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24"
+        height="54"
+        width="54"
+        fill="white"
+      >
+        <title>bookshelf</title>
+        <path
+          d="M9 3V18H12V3H9M12 5L16 18L19 17L15 4L12 5M5 5V18H8V5H5M3 19V21H21V19H3Z"
+        />
+      </svg>
+      <span class="font-bold text-xl tracking-tight">Library</span>
+    </div>
+  </nav>
   <body>
-    <h1 class="font-bold text-3xl">Library</h1>
-    <br />
-    <div id="library"></div>
+    <div
+      class="m-10 flex justify-center relative overflow-x-auto"
+      id="library"
+    ></div>
     <dialog id="dialog">
       <div class="text-center pb-10 font-semibold text-lg">
         <p>Add new Book to Library</p>
@@ -65,7 +83,7 @@
               class="bg-gray-200 appearance-none border-2 border-gray-200 rounded w-full py-2 px-4 text-gray-700 leading-tight focus:outline-none focus:bg-white focus:border-purple-500"
               id="pages"
               type="number"
-              value="10"
+              value="0"
             />
           </div>
         </div>
@@ -105,9 +123,15 @@
         </div>
       </form>
     </dialog>
-    <p>
-      <button id="showDialog">NEW BOOK</button>
-    </p>
+    <div>
+      <button
+        class="fixed bottom-11 left-1/2 shadow bg-purple-500 hover:bg-purple-400 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded-full"
+        id="showDialog"
+      >
+        NEW BOOK
+      </button>
+    </div>
+
     <script src="script.js"></script>
   </body>
 </html>
