@@ -39,14 +39,14 @@ function displayBooks() {
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'delete';
     deleteButton.classList.add('hover:underline');
+
     deleteButton.onclick = function() {
         const title = row.cells[0].textContent;
         console.log(title)
-        const bookToDelete = myLibrary.find(book => book.title === title);
-        console.log(bookToDelete)
         deleteBook(title)
         displayBooks();
       };
+
     deleteCell.appendChild(deleteButton);
   });
 
@@ -65,6 +65,15 @@ function deleteBook(title) {
 // Manually add a few books to the library for demonstration
 myLibrary.push(new Book("The Hobbit", "J.R.R. Tolkien", 295, true));
 myLibrary.push(new Book("To Kill a Mockingbird", "Harper Lee", 336, false));
+myLibrary.push(new Book("1984", "George Orwell", 328, true));
+myLibrary.push(new Book("Pride and Prejudice", "Jane Austen", 432, true));
+myLibrary.push(new Book("The Great Gatsby", "F. Scott Fitzgerald", 200, true));
+myLibrary.push(new Book("Moby Dick", "Herman Melville", 624, false));
+myLibrary.push(new Book("The Catcher in the Rye", "J.D. Salinger", 224, true));
+myLibrary.push(new Book("Brave New World", "Aldous Huxley", 288, false));
+myLibrary.push(new Book("The Lord of the Rings", "J.R.R. Tolkien", 1178, true));
+myLibrary.push(new Book("The Hitchhiker's Guide to the Galaxy", "Douglas Adams", 224, true));
+myLibrary.push(new Book("Frankenstein", "Mary Shelley", 280, false));
 
 
 // Dialog for new Book
