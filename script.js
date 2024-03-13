@@ -20,7 +20,7 @@ function displayBooks() {
   table.classList.add("table-auto", "w-full", "text-sm", "text-left", "rtl:text-right", "text-gray-500", "dark:text-gray-400");
 
   const headerRow = table.insertRow();
-  const headers = ['Title', 'Author', 'Pages', 'Read'];
+  const headers = ['Title', 'Author', 'Pages', 'Read', ' '];
   headers.forEach(headerText => {
     const header = document.createElement("th");
     header.textContent = headerText;
@@ -33,12 +33,33 @@ function displayBooks() {
     Object.values(book).forEach(value => {
       const cell = row.insertCell();
       cell.textContent = value;
-    //   row.classList.add("border-b", "border-neutral-200", "font-medium", "dark:border-white/10");
       cell.classList.add("border-b", "py-2", "text-gray-800");
     });
+    const deleteCell = row.insertCell();
+    const deleteButton = document.createElement('button');
+    deleteButton.textContent = 'delete';
+    deleteButton.classList.add('hover:underline');
+    deleteButton.onclick = function() {
+        const title = row.cells[0].textContent;
+        console.log(title)
+        const bookToDelete = myLibrary.find(book => book.title === title);
+        console.log(bookToDelete)
+        deleteBook(title)
+        displayBooks();
+      };
+    deleteCell.appendChild(deleteButton);
   });
 
   libraryTable.appendChild(table);
+}
+
+function deleteBook(title) {
+    for (var i = 0; i < myLibrary.length; i++) {
+        if (myLibrary[i].title === title) {
+            myLibrary.splice(i, 1); 
+            break;
+        }
+    }
 }
 
 // Manually add a few books to the library for demonstration
