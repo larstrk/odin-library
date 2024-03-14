@@ -30,11 +30,19 @@ function displayBooks() {
 
   myLibrary.forEach(book => {
     const row = table.insertRow();
-    Object.values(book).forEach(value => {
+    Object.keys(book).forEach((key) => {
       const cell = row.insertCell();
-      cell.textContent = value;
+      if (key === 'read') {
+        const checkbox = document.createElement('input');
+        checkbox.type = 'checkbox';
+        checkbox.checked = book[key];
+        cell.appendChild(checkbox);
+      } else {
+        cell.textContent = book[key];
+      }
       cell.classList.add("border-b", "py-2", "text-gray-800");
     });
+
     const deleteCell = row.insertCell();
     const deleteButton = document.createElement('button');
     deleteButton.textContent = 'delete';
