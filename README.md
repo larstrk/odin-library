@@ -2,6 +2,8 @@
 
 This is a simple web application for managing a personal library. Users can add new books, mark books as read, and view their library.
 
+Live Preview: https://larstrk.github.io/odin-library/
+
 ## Features
 
 - Add new books with title, author, pages, and read status
@@ -17,7 +19,7 @@ This is a simple web application for managing a personal library. Users can add 
 ## Installation
 
 1. Clone the repository:
-   git clone https://github.com/your-username/my-library.git
+   git clone https://github.com/larstrk/odin-library.git
 
 2. Open the `index.html` file in your web browser.
 
@@ -29,5 +31,4 @@ This is a simple web application for managing a personal library. Users can add 
 
 ## Screenshots
 
-![Library](image.png)
-![Add-Book](image-1.png)
+![Library](screenshot.png)
