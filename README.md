@@ -29,6 +29,6 @@ Live Preview: https://larstrk.github.io/odin-library/
 - Fill in the details of the book and click "Save" to add it to your library.
 - Click "Close" to cancel adding a new book.
 
-## Screenshots
+## Screenshot
 
 ![Library](screenshot.png)
